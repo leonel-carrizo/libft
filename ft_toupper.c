@@ -6,7 +6,7 @@
 /*   By: lcarrizo <lcarrizo@student.42london.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 03:20:50 by lcarrizo          #+#    #+#             */
-/*   Updated: 2023/11/05 04:01:10 by lcarrizo         ###   ###.london.com    */
+/*   Updated: 2023/11/13 18:18:13 by lcarrizo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,10 @@ int	ft_toupper(int c)
 		return (c);
 }
 
-int	main(void)
-{
-	char lowercase = 'q';
-	char uppercase = ft_toupper(lowercase);
-	printf("%c\n", uppercase);
-	return (0);
-}
+//int	main(void)
+//{
+//	char lowercase = 'q';
+//	char uppercase = ft_toupper(lowercase);
+//	printf("%c\n", uppercase);
+//	return (0);
+//}

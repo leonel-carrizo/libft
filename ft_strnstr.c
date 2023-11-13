@@ -6,33 +6,42 @@
 /*   By: lcarrizo <lcarrizo@student.42london.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 19:11:09 by lcarrizo          #+#    #+#             */
-/*   Updated: 2023/11/05 21:16:08 by lcarrizo         ###   ###.london.com    */
+/*   Updated: 2023/11/13 18:22:13 by lcarrizo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
-#include <string.h>
 #include "libft.h"
+#include <bsd/string.h>
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	if (*little == '\0')
+	size_t	len_little;
+
+	len_little = ft_strlen(little);
+	if (len_little == 0)
 		return ((char *)big);
-
-	return (NULL);	
+	while (big && len >= len_little)
+	{
+		if (*big == *little && ft_strncmp(big, little, len_little) == 0)
+			return ((char *)big);
+		big++;
+		len--;
+	}
+	return (NULL);
 }
 
-int	main(void)
-{
-	const char *large = "Foo Bar Baz";
-	const char *small = "Bar";
-	char	*ptr;
-
-	ptr = ft_strnstr(large, small, 4);
-	printf("This si FT: %s\n", ptr);
-	printf("This is C: %s\n", ptr);
-	return (0);
-}
+//int	main(void)
+//{
+//	const char *large = "Foo Bar Baz";
+//	const char *small = "Baz";
+//	char	*ptr;
+//
+//	ptr = ft_strnstr(large, small, ft_strlen(small));
+//	printf("This is FT: %s\n", ptr);
+//	printf("This is C: %s\n", strnstr(large, small, ft_strlen(small)));
+//	return (0);
+//}
 
 //DESCRIPTION
 //The  strnstr()  function  locates the first occurrence of the null-termi‐
@@ -45,4 +54,3 @@ int	main(void)
 //If little is an empty string, big is returned; if little  occurs  nowhere
 //in  big,  NULL is returned; otherwise a pointer to the first character of
 //the first occurrence of little is returned.
-

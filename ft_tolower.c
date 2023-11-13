@@ -6,7 +6,7 @@
 /*   By: lcarrizo <lcarrizo@student.42london.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 04:02:53 by lcarrizo          #+#    #+#             */
-/*   Updated: 2023/11/05 04:10:18 by lcarrizo         ###   ###.london.com    */
+/*   Updated: 2023/11/13 18:19:59 by lcarrizo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,10 @@ int	ft_tolower(int c)
 
 }
 
-int	main(void)
-{
-	char upper = 'B';
-	char low = ft_tolower(upper);
-	printf("%c\n", low);
-	return (0);
-}
+//int	main(void)
+//{
+//	char upper = 'B';
+//	char low = ft_tolower(upper);
+//	printf("%c\n", low);
+//	return (0);
+//}

@@ -1,19 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lcarrizo <lcarrizo@student.42london.com>   +#+  +:+       +#+        */
+/*   By: lcarrizo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/01 10:11:13 by lcarrizo          #+#    #+#             */
-/*   Updated: 2023/11/13 18:30:21 by lcarrizo         ###   ########.fr       */
+/*   Created: 2023/11/13 18:55:02 by lcarrizo          #+#    #+#             */
+/*   Updated: 2023/11/13 18:56:53 by lcarrizo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libft.h"
 
-int	ft_isprint(int c)
+#include <libft.h>
+
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
-	if (32 <= c && c <= 126)
-		return (1);
+	return ();
+}
+
+int	main(void)
+{
+	
 	return (0);
 }

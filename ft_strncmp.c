@@ -6,12 +6,12 @@
 /*   By: lcarrizo <lcarrizo@student.42london.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 06:36:08 by lcarrizo          #+#    #+#             */
-/*   Updated: 2023/11/05 07:15:57 by lcarrizo         ###   ###.london.com    */
+/*   Updated: 2023/11/13 18:38:35 by lcarrizo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stdio.h>
-#include <string.h>
+#include "libft.h"
+//#include <stdio.h>
+//#include <string.h>
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
@@ -27,15 +27,15 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 		return (*(unsigned char *)s1 - *(unsigned char *)s2);
 }
 
-int	main(void)
-{
-	char	str1[] = "\0";
-	char	str2[] = "HELlo";
-	
-	printf("This is FT: %d\n", ft_strncmp(str1, str2, 3));
-	printf("This is C: %d\n", strncmp(str1, str2, 3));
-	return (0);
-}
+//int	main(void)
+//{
+//	char	str1[] = "\0";
+//	char	str2[] = "HELlo";
+//	
+//	printf("This is FT: %d\n", ft_strncmp(str1, str2, 3));
+//	printf("This is C: %d\n", strncmp(str1, str2, 3));
+//	return (0);
+//}
 
 //DESCRIPTION
 //The  strcmp() function compares the two strings s1 and s2.  The locale is

@@ -6,9 +6,10 @@
 /*   By: lcarrizo <lcarrizo@student.42london.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 10:39:50 by lcarrizo          #+#    #+#             */
-/*   Updated: 2023/10/31 14:43:36 by lcarrizo         ###   ###.london.com    */
+/*   Updated: 2023/11/13 18:28:53 by lcarrizo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
 int	ft_isalpha(int c)
 {

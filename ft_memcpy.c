@@ -6,10 +6,11 @@
 /*   By: lcarrizo <lcarrizo@student.42london.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 09:37:39 by lcarrizo          #+#    #+#             */
-/*   Updated: 2023/11/02 23:23:04 by lcarrizo         ###   ###.london.com    */
+/*   Updated: 2023/11/13 18:45:20 by lcarrizo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdio.h>
+#include "libft.h"
+//#include <stdio.h>
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
@@ -23,16 +24,16 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	return (dest);
 }
 
-int	main(void)
-{
-	char	source[10]="I'm source";
-	char	dest_a[10]="0000000000";
-
-	printf("This is the destination: %s\n", dest_a);
-	ft_memcpy(&dest_a, &source, 10);
-	printf("I'm destination after: %s\n", dest_a);
-	return (0);
-}
+//int	main(void)
+//{
+//	char	source[10]="I'm source";
+//	char	dest_a[10]="0000000000";
+//
+//	printf("This is the destination: %s\n", dest_a);
+//	ft_memcpy(&dest_a, &source, 10);
+//	printf("I'm destination after: %s\n", dest_a);
+//	return (0);
+//}
 
 //DESCRIPTION
 //The  memcpy() function copies n bytes from memory area src to memory areadest.

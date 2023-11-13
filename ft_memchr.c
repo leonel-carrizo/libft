@@ -6,12 +6,12 @@
 /*   By: lcarrizo <lcarrizo@student.42london.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 16:53:22 by lcarrizo          #+#    #+#             */
-/*   Updated: 2023/11/05 18:02:51 by lcarrizo         ###   ###.london.com    */
+/*   Updated: 2023/11/13 18:43:17 by lcarrizo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stdio.h>
-#include <string.h>
+#include "libft.h"
+//#include <stdio.h>
+//#include <string.h>
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
@@ -27,14 +27,14 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	return (NULL);
 }
 
-int	main(void)
-{
-	unsigned char	x[] = "HolaMundo";
-
-	printf("This is FT: %p\n", ft_memchr(x, 'o', 5));
-	printf("This is C: %p\n", memchr(x, 'o', 5));
-	return (0);
-}
+//int	main(void)
+//{
+//	unsigned char	x[] = "HolaMundo";
+//
+//	printf("This is FT: %p\n", ft_memchr(x, 'o', 5));
+//	printf("This is C: %p\n", memchr(x, 'o', 5));
+//	return (0);
+//}
 
 //DESCRIPTION
 //The  memchr()  function  scans  the  initial  n  bytes of the memory area

@@ -6,18 +6,18 @@
 /*   By: lcarrizo <lcarrizo@student.42london.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 18:06:38 by lcarrizo          #+#    #+#             */
-/*   Updated: 2023/11/05 19:08:23 by lcarrizo         ###   ###.london.com    */
+/*   Updated: 2023/11/13 18:44:32 by lcarrizo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stdio.h>
-#include <string.h>
+#include "libft.h"
+//#include <stdio.h>
+//#include <string.h>
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
 	const unsigned char	*p1;
 	const unsigned char	*p2;
-	size_t	i;
+	size_t				i;
 
 	p1 = (const unsigned char *)s1;
 	p2 = (const unsigned char *)s2;
@@ -31,15 +31,15 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	return (0);
 }
 
-int	main(void)
-{
-	char	x[] = "Hola mundo";
-	char	y[] = "Hola Mundo";
-
-	printf("This is FT: %d\n", ft_memcmp(x, y, 10));
-	printf("This is C: %d\n", memcmp(x, y, 10));
-	return (0);
-}
+//int	main(void)
+//{
+//	char	x[] = "Hola mundo";
+//	char	y[] = "Hola Mundo";
+//
+//	printf("This is FT: %d\n", ft_memcmp(x, y, 10));
+//	printf("This is C: %d\n", memcmp(x, y, 10));
+//	return (0);
+//}
 
 //DESCRIPTION
 //The memcmp() function compares the first n bytes (each interpreted as 

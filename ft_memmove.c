@@ -6,12 +6,12 @@
 /*   By: lcarrizo <lcarrizo@student.42london.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 21:58:38 by lcarrizo          #+#    #+#             */
-/*   Updated: 2023/11/05 03:15:40 by lcarrizo         ###   ###.london.com    */
+/*   Updated: 2023/11/13 18:50:27 by lcarrizo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stdio.h>
-#include <string.h>
+#include "libft.h"
+//#include <stdio.h>
+//#include <string.h>
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
@@ -20,12 +20,10 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 
 	d = dest;
 	s = src;
-	/* If the addresses do not overlap, we simply copy the data */
 	if (d < s && s + n > d)
 		while (n--)
 			*d++ = *s++;
 	else
-	/* If the addresses overlap, we copy the data from the end. */
 	{
 		d += n;
 		s += n;
@@ -35,18 +33,18 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	return (dest);
 }
 
-int	main(void)
-{
-	char	origen[10] = "holaMundo";
-	char	destino[10] = "0000";
-
-	ft_memmove(destino, origen, 5);
-	printf("Destination with ft_ = %s\n", destino);
-	memmove(destino, origen, 5);
-	printf("Destination with string.h = %s\n", destino);
-	return (0);
-}
-
+//int	main(void)
+//{
+//	char	origen[10] = "holaMundo";
+//	char	destino[10] = "0000";
+//
+//	ft_memmove(destino, origen, 5);
+//	printf("Destination with ft_ = %s\n", destino);
+//	memmove(destino, origen, 5);
+//	printf("Destination with string.h = %s\n", destino);
+//	return (0);
+//}
+//
 //DESCRIPCIÓN
 //La función memmove() copia n bytes del área de memoria src 
 //al área de memoria dest.  
