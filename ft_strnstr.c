@@ -10,9 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "libft.h"
-#include <bsd/string.h>
+//#include <bsd/string.h>
+//#include <stdio.h>
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
