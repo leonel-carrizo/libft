@@ -6,17 +6,18 @@
 /*   By: lcarrizo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/18 16:14:13 by lcarrizo          #+#    #+#             */
-/*   Updated: 2023/11/20 22:01:08 by lcarrizo         ###   ########.fr       */
+/*   Updated: 2023/11/21 20:40:41 by lcarrizo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
 
-static size_t	num_words(char *s, char c)
+static size_t	num_words(const char *s, char c)
 {
 	size_t	count;
-
+	
+	count = 0;
 	while (*s)
 	{
 		if (*s != c)
@@ -31,56 +32,88 @@ static size_t	num_words(char *s, char c)
 	return (count);
 }
 
-static size_t	substr_len(char *substr, char c)
+static void	memfree(size_t i, char **array)
 {
-	int	i;
+	while (i)
+	{
+		free(array[i]);
+		i--;
+	}
+	array = NULL;
+	free(array);
+}
+
+static size_t	substr_len(const char *substr, char c)
+{
+	size_t	i;
 
 	i = 0;
-	while (*substr != c)
+	while (*substr && *substr != c)
+	{
 		i++;
+		substr++;
+	}
 	return(i);
 }
 
-static char **get_substr(const char *str, char **ptr, char c, size_t num_substr)
+static char **get_substr(const char *str, char **array, char c, size_t num_substr)
 {
-	char	*substr;
+	size_t	i;
+	unsigned int	j;
 	
+	i = 0;
+	j = 0;
 	while (i < num_substr)
 	{
-		while ()
+		while (str[j] != '\0' && str[j] == c)
+			j++;
+		array[i] = ft_substr(str, j, substr_len(&str[j], c));
+		if (!array[i])
+		{
+			memfree(i, array);
+			return (NULL);	
+		}
+		while (str[j] && str [j] != c)
+			j++;
 		i++;
+		j++;
 	}
-	return (substr);
-}
-
-static void	memfree(*substr)
-{
-	
+	*(array + i) = NULL;
+	return (array);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	char	**ptr;
+	char	**array;
+	size_t	num_substr;
 
 	if (!*s)
-		return (NULL;)
-	return (0);
+		return (NULL);
+	num_substr = num_words(s,c);
+	array = (char **)malloc(sizeof(char *) * (num_substr + 1));
+	if (!array)
+		return (NULL);
+	array = get_substr(s, array, c, num_substr);
+	return (array);
 }
 
 int	main(void)
 {
 	const char	*str;
 	char	**matriz;
-	int	i;
+	size_t	i;
+	//size_t	j;
 
-	str = "Hola,como,estas";
-	matriz = ft_split(str, ',');
+	str = "---Hola---como-esta-todo-kbsklsbklcsdb-----   ---- ";
+	matriz = ft_split(str, '-');
 	i = 0;
-	while(matriz[i] != '\0')
+	//j = num_words(str, '-');
+	while(matriz[i] != (void *)0)
 	{
-		printf("%s", matriz[i]);
+		printf("%s\n", matriz[i]);
 		i++;
 	}
+	free(matriz);
 	return (0);
 }
 
