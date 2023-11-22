@@ -6,7 +6,7 @@
 /*   By: lcarrizo <lcarrizo@student.42london.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 21:58:38 by lcarrizo          #+#    #+#             */
-/*   Updated: 2023/11/13 18:50:27 by lcarrizo         ###   ########.fr       */
+/*   Updated: 2023/11/22 11:10:10 by lcarrizo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -16,31 +16,32 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 {
 	char		*d;
 	const char	*s;
+	size_t		i;
 
-	d = dest;
-	s = src;
-	if (d < s && s + n > d)
-		while (n--)
-			*d++ = *s++;
-	else
+	d = (char *)dest;
+	s = (char *)src;
+	i = 0;
+	if (d && s)
 	{
-		d += n;
-		s += n;
-		while (n--)
-			*--d = *--s;
+		if (d > s)
+			while (n--)
+				d[n] = s[n];
+		else
+			while (*s)
+				*d++ = *s++;
 	}
-	return (dest);
+	return (d);
 }
 
 //int	main(void)
 //{
-//	char	origen[10] = "holaMundo";
-//	char	destino[10] = "0000";
+//	char	origen[12] = "Hello, world";
+//	char	destino[12] = "Hello, world";
 //
-//	ft_memmove(destino, origen, 5);
-//	printf("Destination with ft_ = %s\n", destino);
-//	memmove(destino, origen, 5);
-//	printf("Destination with string.h = %s\n", destino);
+//	ft_memmove(&origen[7], origen, 5);
+//	printf("Destination with ft_ = --%s--\n", origen);
+//	memmove(&destino[7] , destino, 5);
+//	printf("Destination with string.h = --%s--\n", origen);
 //	return (0);
 //}
 //
