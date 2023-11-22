@@ -6,24 +6,24 @@
 /*   By: lcarrizo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/18 16:14:13 by lcarrizo          #+#    #+#             */
-/*   Updated: 2023/11/21 20:40:41 by lcarrizo         ###   ########.fr       */
+/*   Updated: 2023/11/22 11:21:47 by lcarrizo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
+//#include <stdio.h>
 
 static size_t	num_words(const char *s, char c)
 {
 	size_t	count;
-	
+
 	count = 0;
 	while (*s)
 	{
 		if (*s != c)
 		{
 			count++;
-			while ( *s && *s != c)
+			while (*s && *s != c)
 				s++;
 		}
 		while (*s == c)
@@ -53,17 +53,17 @@ static size_t	substr_len(const char *substr, char c)
 		i++;
 		substr++;
 	}
-	return(i);
+	return (i);
 }
 
-static char **get_substr(const char *str, char **array, char c, size_t num_substr)
+static char	**get_substr(const char *str, char **array, char c, size_t nsub)
 {
-	size_t	i;
+	size_t			i;
 	unsigned int	j;
-	
+
 	i = 0;
 	j = 0;
-	while (i < num_substr)
+	while (i < nsub)
 	{
 		while (str[j] != '\0' && str[j] == c)
 			j++;
@@ -71,7 +71,7 @@ static char **get_substr(const char *str, char **array, char c, size_t num_subst
 		if (!array[i])
 		{
 			memfree(i, array);
-			return (NULL);	
+			return (NULL);
 		}
 		while (str[j] && str [j] != c)
 			j++;
@@ -89,7 +89,7 @@ char	**ft_split(char const *s, char c)
 
 	if (!*s)
 		return (NULL);
-	num_substr = num_words(s,c);
+	num_substr = num_words(s, c);
 	array = (char **)malloc(sizeof(char *) * (num_substr + 1));
 	if (!array)
 		return (NULL);
@@ -97,25 +97,23 @@ char	**ft_split(char const *s, char c)
 	return (array);
 }
 
-int	main(void)
-{
-	const char	*str;
-	char	**matriz;
-	size_t	i;
-	//size_t	j;
-
-	str = "---Hola---como-esta-todo-kbsklsbklcsdb-----   ---- ";
-	matriz = ft_split(str, '-');
-	i = 0;
-	//j = num_words(str, '-');
-	while(matriz[i] != (void *)0)
-	{
-		printf("%s\n", matriz[i]);
-		i++;
-	}
-	free(matriz);
-	return (0);
-}
+//int	main(void)
+//{
+//	const char	*str;
+//	char		**matriz;
+//	size_t		i;
+//
+//	str = "---Hola---como-esta-todo-kbsklsbklcsdb-----   ---- ";
+//	matriz = ft_split(str, '-');
+//	i = 0;
+//	while (matriz[i] != (void *)0)
+//	{
+//		printf("%s\n", matriz[i]);
+//		i++;
+//	}
+//	free(matriz);
+//	return (0);
+//}
 
 //las SubCadenas estan definidas a partir del caracter dado `c`.
 //se excluye el caracyter dado `c`.
