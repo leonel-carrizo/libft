@@ -17,6 +17,7 @@
 # include <unistd.h>
 # include <string.h>
 # include <stddef.h>
+# include <stdio.h>
 
 int			ft_toupper(int c);
 int			ft_tolower(int c);
