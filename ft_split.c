@@ -6,7 +6,7 @@
 /*   By: lcarrizo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/18 16:14:13 by lcarrizo          #+#    #+#             */
-/*   Updated: 2023/11/22 11:21:47 by lcarrizo         ###   ########.fr       */
+/*   Updated: 2023/11/27 19:10:14 by lcarrizo         ###   ###.london.com    */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ static size_t	num_words(const char *s, char c)
 		}
 		while (*s == c)
 			s++;
-	}	
+	}
 	return (count);
 }
 
