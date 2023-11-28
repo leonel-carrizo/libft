@@ -6,7 +6,7 @@
 /*   By: lcarrizo <lcarrizo@student.42london.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 21:58:38 by lcarrizo          #+#    #+#             */
-/*   Updated: 2023/11/22 11:10:10 by lcarrizo         ###   ########.fr       */
+/*   Updated: 2023/11/28 04:51:37 by lcarrizo         ###   ###.london.com    */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -16,11 +16,9 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 {
 	char		*d;
 	const char	*s;
-	size_t		i;
 
 	d = (char *)dest;
 	s = (char *)src;
-	i = 0;
 	if (d && s)
 	{
 		if (d > s)
