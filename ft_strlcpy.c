@@ -6,12 +6,11 @@
 /*   By: lcarrizo <lcarrizo@student.42london.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 14:14:56 by lcarrizo          #+#    #+#             */
-/*   Updated: 2023/11/14 17:07:33 by lcarrizo         ###   ###.london.com    */
+/*   Updated: 2023/11/28 23:06:43 by lcarrizo         ###   ###.london.com    */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-//#include <stdio.h>
 //#include <bsd/string.h>
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
@@ -19,21 +18,21 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	size_t	len;
 
 	len = ft_strlen(src);
+	if (size <= 0)
+		return (len);
 	size -= 1;
-	if (size > 0)
-	{
-		while (*src && size--)
-			*dst++ = *src++;
-		*dst = '\0';
-	}
+	while (*src && size--)
+		*dst++ = *src++;
+	*dst = '\0';
 	return (len);
 }
 
 //int	main(void)
 //{
-//	char		dest[8];
-//	const char	*src = "Hola mundo loco";
+//	char		dest[] = " ";
+//	const char	src[] = "Hola mundo loco";
 //
+//	printf("This is FT before: %s\n", dest);
 //	ft_strlcpy(dest, src, sizeof(dest));
 //	printf("This is FT: %s\n", dest);
 //	printf("This is FT: %ld\n", ft_strlcpy(dest, src, sizeof(dest)));

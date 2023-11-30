@@ -6,32 +6,36 @@
 /*   By: lcarrizo <lcarrizo@student.42london.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 09:37:39 by lcarrizo          #+#    #+#             */
-/*   Updated: 2023/11/13 18:45:20 by lcarrizo         ###   ########.fr       */
+/*   Updated: 2023/11/28 08:24:46 by lcarrizo         ###   ###.london.com    */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
-//#include <stdio.h>
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	unsigned char	*dest_b;
-	unsigned char	*src_b;
+	void	*ptr;
 
-	dest_b = (unsigned char *)dest;
-	src_b = (unsigned char *)src;
+	if (!dest && !src)
+		return (dest);
+	ptr = dest;
 	while (n--)
-		*dest_b++ = *src_b++;
-	return (dest);
+		*(char *)dest++ = *(char *)src++;
+	return (ptr);
 }
 
-//int	main(void)
+//int    main(void)
 //{
-//	char	source[10]="I'm source";
-//	char	dest_a[10]="0000000000";
+//	char	source[]="1234567890";
+//	char	dest_a[10]="Hola Mundo";
+//	char	src[] = "1234567890";
+//	char	dst[10] = "Hola Mundo";
 //
-//	printf("This is the destination: %s\n", dest_a);
-//	ft_memcpy(&dest_a, &source, 10);
-//	printf("I'm destination after: %s\n", dest_a);
+//	printf("This is the destina FT before: %s\n", dest_a);
+//	ft_memcpy(dest_a, source, sizeof(src));
+//	printf("I'm destination FT after: %s\n", dest_a);
+//	printf("this is dst C: %s\n", dst);
+//	memcpy(dst, src, sizeof(src));
+//	printf("this is dst C After: %s\n", dst);
 //	return (0);
 //}
 

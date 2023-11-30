@@ -6,21 +6,26 @@
 /*   By: lcarrizo <lcarrizo@student.42london.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 04:58:24 by lcarrizo          #+#    #+#             */
-/*   Updated: 2023/11/13 18:31:07 by lcarrizo         ###   ########.fr       */
+/*   Updated: 2023/11/28 08:52:02 by lcarrizo         ###   ###.london.com    */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
-//#include <stdio.h>
 
 char	*ft_strrchr(const char *s, int c)
 {
 	const char	*found;
 
 	found = NULL;
-	while (*s++)
-		if (*s == c)
+	while (*s)
+	{
+		if (*s == (char)c)
 			found = s;
-	return ((char *)found);
+		s++;
+	}
+	if (*s == (char)c)
+		return ((char *)s);
+	else
+		return ((char *)found);
 }
 
 //int	main(void)

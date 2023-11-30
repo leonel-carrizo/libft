@@ -6,7 +6,7 @@
 /*   By: lcarrizo <lcarrizo@student.42london.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 19:11:09 by lcarrizo          #+#    #+#             */
-/*   Updated: 2023/11/13 18:22:13 by lcarrizo         ###   ########.fr       */
+/*   Updated: 2023/11/30 09:41:32 by lcarrizo         ###   ###.london.com    */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	size_t	len_little;
+	
 
 	len_little = ft_strlen(little);
 	if (len_little == 0)

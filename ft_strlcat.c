@@ -6,7 +6,7 @@
 /*   By: lcarrizo <lcarrizo@student.42london.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 17:42:41 by lcarrizo          #+#    #+#             */
-/*   Updated: 2023/11/16 15:17:02 by lcarrizo         ###   ###.london.com    */
+/*   Updated: 2023/11/29 22:26:05 by lcarrizo         ###   ###.london.com    */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,34 +14,42 @@
 //#include <stdio.h>
 //#include <bsd/string.h>
 
-size_t	ft_strlcat(char *dst, const char *src, size_t size)
+size_t	ft_strlcat(char *dst, const char *src, size_t dsize)
 {
-	size_t	dest_len;
-	size_t	src_len;
-	size_t	i;
+	const char	*odst;
+	const char	*osrc;
+	size_t		n;
+	size_t		dlen;
 
-	dest_len = ft_strlen(dst);
-	src_len = ft_strlen(src);
-	if (size > 0)
+	odst = dst;
+	osrc = src;
+	n = dsize;
+	while (n-- != 0 && *dst != '\0')
+		dst++;
+	dlen = dst - odst;
+	n = dsize - dlen;
+	if (n-- == 0)
+		return (dlen + strlen(src));
+	while (*src != '\0')
 	{
-		i = 0;
-		while (i < size - dest_len - 1 && src[i] != '\0')
+		if (n != 0)
 		{
-			dst[dest_len + i] = src[i];
-			i++;
+			*dst++ = *src;
+			n--;
 		}
-		dst[dest_len + i] = '\0';
+		src++;
 	}
-	return (dest_len + src_len);
+	*dst = '\0';
+	return (dlen + (src - osrc));
 }
-
 //int	main(void)
 //{
-//	char	dest[20] = "Hola ";
-//	const char *src = "Mundo";
+//	char	dest[] = "Hola ";
+//	const char str = "the cake is a lie !\0I'm hidden lol\r\n";
+//	const char *src = str;
 //
-//	char dest1[20] = "Hola ";
-//	const char *src1 = "Mundo";
+//	char dest1[] = "Hola ";
+//	const char *src1 = str;
 //
 //	ft_strlcat(dest, src, sizeof(dest));
 //	printf("This is FT: %s\n", dest);
