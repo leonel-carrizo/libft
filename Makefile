@@ -6,7 +6,7 @@
 #    By: lcarrizo <lcarrizo@student.42london.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/28 03:19:48 by lcarrizo          #+#    #+#              #
-#    Updated: 2023/12/04 18:11:02 by lcarrizo         ###   ########.fr        #
+#    Updated: 2023/12/04 19:04:02 by lcarrizo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,7 @@ OBJ		= $(SRC:.c=.o)
 
 #############################    VARIABLES   ##################################
 
-CC		= gcc
+CC		= cc
 RM 		= rm -fr
 # GCC OPT: -c = compile without exe. -I = find the header in the folder given
 OPT		= -c
