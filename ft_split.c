@@ -6,12 +6,11 @@
 /*   By: lcarrizo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/18 16:14:13 by lcarrizo          #+#    #+#             */
-/*   Updated: 2023/11/27 19:10:14 by lcarrizo         ###   ###.london.com    */
+/*   Updated: 2023/12/02 01:43:33 by lcarrizo         ###   ###.london.com    */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-//#include <stdio.h>
 
 static size_t	num_words(const char *s, char c)
 {
@@ -26,7 +25,7 @@ static size_t	num_words(const char *s, char c)
 			while (*s && *s != c)
 				s++;
 		}
-		while (*s == c)
+		else if (*s == c)
 			s++;
 	}
 	return (count);
@@ -34,12 +33,11 @@ static size_t	num_words(const char *s, char c)
 
 static void	memfree(size_t i, char **array)
 {
-	while (i)
+	while (i > 0)
 	{
-		free(array[i]);
 		i--;
+		free(array[i]);
 	}
-	array = NULL;
 	free(array);
 }
 
@@ -56,16 +54,16 @@ static size_t	substr_len(const char *substr, char c)
 	return (i);
 }
 
-static char	**get_substr(const char *str, char **array, char c, size_t nsub)
+static char	**get_substr(const char *str, char c, char **array, size_t nsub)
 {
-	size_t			i;
-	unsigned int	j;
+	size_t	i;
+	size_t	j;
 
 	i = 0;
 	j = 0;
 	while (i < nsub)
 	{
-		while (str[j] != '\0' && str[j] == c)
+		while (str[j] && str[j] == c)
 			j++;
 		array[i] = ft_substr(str, j, substr_len(&str[j], c));
 		if (!array[i])
@@ -73,10 +71,9 @@ static char	**get_substr(const char *str, char **array, char c, size_t nsub)
 			memfree(i, array);
 			return (NULL);
 		}
-		while (str[j] && str [j] != c)
+		while (str[j] && str[j] != c)
 			j++;
 		i++;
-		j++;
 	}
 	*(array + i) = NULL;
 	return (array);
@@ -87,13 +84,13 @@ char	**ft_split(char const *s, char c)
 	char	**array;
 	size_t	num_substr;
 
-	if (!*s)
+	if (!s)
 		return (NULL);
 	num_substr = num_words(s, c);
 	array = (char **)malloc(sizeof(char *) * (num_substr + 1));
 	if (!array)
 		return (NULL);
-	array = get_substr(s, array, c, num_substr);
+	array = get_substr(s, c, array, num_substr);
 	return (array);
 }
 

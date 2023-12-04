@@ -6,7 +6,7 @@
 /*   By: lcarrizo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 20:01:39 by lcarrizo          #+#    #+#             */
-/*   Updated: 2023/11/16 21:24:29 by lcarrizo         ###   ########.fr       */
+/*   Updated: 2023/11/30 17:05:09 by lcarrizo         ###   ###.london.com    */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,14 @@
 
 void	*ft_calloc(size_t nmemb, size_t size)
 {
-	size_t	alloc_size;
 	void	*allocated_memory;
 
-	if (nmemb == 0 || size == 0)
+	if ((nmemb >= 42949672926 || size >= 42949672926) && nmemb && size)
 		return (NULL);
-	alloc_size = nmemb * size;
-	if (alloc_size / nmemb != size)
+	allocated_memory = (void *)malloc(nmemb * size);
+	if (allocated_memory == NULL)
 		return (NULL);
-	allocated_memory = malloc(alloc_size);
-	if (allocated_memory != NULL)
-		ft_memset(allocated_memory, 0, alloc_size);
+	ft_bzero(allocated_memory, nmemb * size);
 	return (allocated_memory);
 }
 

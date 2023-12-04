@@ -6,7 +6,7 @@
 /*   By: lcarrizo <lcarrizo@student.42london.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 16:36:07 by lcarrizo          #+#    #+#             */
-/*   Updated: 2023/11/24 20:29:42 by lcarrizo         ###   ###.london.com    */
+/*   Updated: 2023/12/02 04:51:50 by lcarrizo         ###   ###.london.com    */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static int	len_str(int num)
 	int	i;
 
 	i = 0;
-	if (num <= 0)
+	if (num < 1)
 		i++;
 	while (num)
 	{
@@ -27,40 +27,42 @@ static int	len_str(int num)
 	return (i);
 }
 
-static char	*new_str(int len)
+static char	*new_str(char *str, int len, int n)
 {
-	char	*str;
+	int			i;
+	long long	num;
+	char		*nstr;
 
-	str = (char *)malloc(sizeof(char) * len + 1);
-	if (!str)
-		return (NULL);
-	return (str);
+	i = len;
+	num = n;
+	nstr = str;
+	if (n < 0)
+	{
+		nstr[0] = '-';
+		num *= -1;
+	}
+	while (i--)
+	{
+		if (i > 0 || n >= 0)
+		{
+			nstr[i] = num % 10 + '0';
+			num /= 10;
+		}
+	}
+	nstr[len] = '\0';
+	return (nstr);
 }
 
 char	*ft_itoa(int n)
 {
-	char		*result;
-	long long	num;
-	int			len;
+	char	*result;
+	int		len;
 
 	len = len_str(n);
-	result = new_str(len);
+	result = (char *)malloc(sizeof(char) * len + 1);
 	if (!result)
 		return (NULL);
-	if (n == 0)
-		return ("0");
-	num = n;
-	if (n < 0)
-	{
-		*result = '-';
-		num *= -1;
-	}
-	result[len + 1] = '\0';
-	while (len-- && num)
-	{
-		result[len] = num % 10 + '0';
-		num /= 10;
-	}
+	result = new_str(result, len, n);
 	return (result);
 }
 

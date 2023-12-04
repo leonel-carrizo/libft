@@ -6,14 +6,13 @@
 /*   By: lcarrizo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 16:19:34 by lcarrizo          #+#    #+#             */
-/*   Updated: 2023/11/18 16:07:01 by lcarrizo         ###   ########.fr       */
+/*   Updated: 2023/12/02 02:06:02 by lcarrizo         ###   ###.london.com    */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-//#include <stdio.h>
 
-static int	chrcmp(const char *set, const char c)
+static size_t	chrcmp(const char *set, const char c)
 {
 	if (!set)
 		return (0);
@@ -28,29 +27,30 @@ static int	chrcmp(const char *set, const char c)
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	size_t	len_s1;
-	char	*new_str;
 	char	*ptr;
 	size_t	start;
 	size_t	end;
+	size_t	i;
 
 	if (!s1 || !set)
 		return (NULL);
-	len_s1 = ft_strlen(s1);
 	start = 0;
-	while (chrcmp(set, s1[start]))
+	while (s1[start] && chrcmp(set, s1[start]))
 		start++;
-	end = len_s1;
+	end = ft_strlen(s1);
 	while (end > start && chrcmp(set, s1[end - 1]))
 		end--;
-	ptr = (char *)malloc(end - start);
-	new_str = ptr;
+	ptr = (char *)malloc(sizeof(char) * (end - start) + 1);
 	if (!ptr)
 		return (NULL);
-	while (start < end)
-		*ptr++ = s1[start++];
-	*ptr = '\0';
-	return (new_str);
+	i = 0;
+	while (start + i < end)
+	{
+		ptr[i] = s1[start + i];
+		i++;
+	}
+	ptr[i] = '\0';
+	return (ptr);
 }
 
 //int	main(void)

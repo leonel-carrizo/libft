@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   frt_putnbr_fd.c                                    :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lcarrizo <lcarrizo@student.42london.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 23:25:57 by lcarrizo          #+#    #+#             */
-/*   Updated: 2023/11/28 00:23:53 by lcarrizo         ###   ###.london.com    */
+/*   Updated: 2023/12/02 05:35:34 by lcarrizo         ###   ###.london.com    */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -27,14 +27,14 @@ void	ft_putnbr_fd(int n, int fd)
 		nb *= -1;
 		write(fd, "-", 1);
 	}
-	while (nb % 10)
+	i = 0;
+	while (nb)
 	{
 		c[i++] = nb % 10 + '0';
 		nb /= 10;
 	}
 	while (i > 0)
 		write (fd, &c[--i], 1);
-	write(fd, "\n", 1);
 }
 
 //int	main(void)
