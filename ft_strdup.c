@@ -6,7 +6,7 @@
 /*   By: lcarrizo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 09:49:56 by lcarrizo          #+#    #+#             */
-/*   Updated: 2023/11/17 11:51:33 by lcarrizo         ###   ########.fr       */
+/*   Updated: 2023/12/04 22:43:14 by lcarrizo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,6 @@ char	*ft_strdup(const char *s)
 	char	*ptr;
 	size_t	len;
 
-	if (s == NULL)
-		return (NULL);
 	len = ft_strlen(s);
 	ptr = (char *)malloc(len + 1);
 	new_str = ptr;
