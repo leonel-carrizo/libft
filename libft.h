@@ -6,7 +6,7 @@
 /*   By: lcarrizo <lcarrizo@student.42london.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 21:08:46 by lcarrizo          #+#    #+#             */
-/*   Updated: 2023/12/02 02:13:35 by lcarrizo         ###   ###.london.com    */
+/*   Updated: 2023/12/04 18:58:05 by lcarrizo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,7 @@
 
 # include <stdlib.h>
 # include <unistd.h>
-# include <string.h>
-# include <stddef.h>
-# include <stdio.h>
 # include <limits.h>
-# include <stdint.h>
-# include <bsd/string.h>
 
 int			ft_toupper(int c);
 int			ft_tolower(int c);
