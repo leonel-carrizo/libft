@@ -6,7 +6,7 @@
 /*   By: lcarrizo <lcarrizo@student.42london.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 20:35:42 by lcarrizo          #+#    #+#             */
-/*   Updated: 2023/11/24 23:38:38 by lcarrizo         ###   ###.london.com    */
+/*   Updated: 2023/12/05 05:34:12 by lcarrizo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	unsigned int	i;
 	char			*str;
 
+	if (!s)
+		return (NULL);
 	str = new_str(str_len(s));
 	if (!str)
 		return (NULL);

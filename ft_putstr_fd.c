@@ -6,7 +6,7 @@
 /*   By: lcarrizo <lcarrizo@student.42london.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 19:11:53 by lcarrizo          #+#    #+#             */
-/*   Updated: 2023/11/27 23:13:39 by lcarrizo         ###   ###.london.com    */
+/*   Updated: 2023/12/05 03:03:17 by lcarrizo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_putstr_fd(char *s, int fd)
 {
-	if (*s)
+	if (s)
 	{
 		while (*s)
 			write(fd, s++, 1);
